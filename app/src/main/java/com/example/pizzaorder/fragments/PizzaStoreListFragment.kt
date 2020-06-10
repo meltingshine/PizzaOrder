@@ -32,10 +32,9 @@ class PizzaStoreListFragment : BaseFragment() {
     override fun setupEvents() {
 
         pizzaStoreListView.setOnItemClickListener { parent, view, position, id ->
-
-            val clickedStore = PizzaStore.get(position)
+            val clickedStore = pizzaStoreList[position]
             val myIntent = Intent(mContext, ViewStoreActivity::class.java)
-            myIntent.putExtra("store","clickedStore")
+            myIntent.putExtra("store",clickedStore)
             startActivity(myIntent)
         }
 
