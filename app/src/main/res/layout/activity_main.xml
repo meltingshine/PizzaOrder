@@ -10,11 +10,10 @@
         android:id="@+id/mainTapLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:tabIndicatorColor="#000000"
-        app:tabMode="scrollable"/>
+        app:tabIndicatorColor="#FFFFFF"/>
 
     <androidx.viewpager.widget.ViewPager
-        android:id="@+id/orderViewPager"
+        android:id="@+id/storeViewPager"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

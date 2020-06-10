@@ -1,12 +1,11 @@
 package com.example.pizzaorder
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.pizzaorder.adapter.FragmentAdapter
+import com.example.pizzaorder.adapters.StoreFragmentPagerAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : BaseActivity() {
-    lateinit var myAdapter: FragmentAdapter
+    lateinit var myAdapter: StoreFragmentPagerAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -16,11 +15,11 @@ class MainActivity : BaseActivity() {
     }
 
     override fun setValues() {
-        myAdapter = FragmentAdapter(supportFragmentManager)
-        orderViewPager.adapter = myAdapter
+        myAdapter = StoreFragmentPagerAdapter(supportFragmentManager)
+        storeViewPager.adapter = myAdapter
 //
 //        탭레이아웃과 뷰페이저를 연결
-        mainTapLayout.setupWithViewPager(orderViewPager)
+        mainTapLayout.setupWithViewPager(storeViewPager)
     }
 
     override fun setupEvents() {

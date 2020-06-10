@@ -1,4 +1,4 @@
-package com.example.pizzaorder.adapter
+package com.example.pizzaorder.adapters
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
@@ -6,7 +6,7 @@ import androidx.fragment.app.FragmentPagerAdapter
 import com.example.pizzaorder.fragments.ChickenStoreListFragment
 import com.example.pizzaorder.fragments.PizzaStoreListFragment
 
-class FragmentAdapter(fm : FragmentManager) : FragmentPagerAdapter(fm) {
+class StoreFragmentPagerAdapter(fm : FragmentManager) : FragmentPagerAdapter(fm) {
 
     override fun getPageTitle(position: Int): CharSequence? {
         return when(position) {
