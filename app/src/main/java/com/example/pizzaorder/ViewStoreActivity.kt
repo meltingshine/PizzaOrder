@@ -1,9 +1,15 @@
 package com.example.pizzaorder
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
+import android.widget.Toast
 import com.bumptech.glide.Glide
 import com.example.pizzaorder.Datas.PizzaStore
+import com.gun0912.tedpermission.PermissionListener
+import com.gun0912.tedpermission.TedPermission
 import kotlinx.android.synthetic.main.activity_view_store.*
+import java.util.jar.Manifest
 
 class ViewStoreActivity : BaseActivity() {
 
@@ -18,7 +24,28 @@ class ViewStoreActivity : BaseActivity() {
     }
 
     override fun setupEvents() {
+    callPhoneBtn.setOnClickListener{
 
+        val permissionListener = object : PermissionListener{
+            override fun onPermissionGranted() {
+                val myUri = Uri.parse("tel:${store.phoneNum}")
+                val myIntent =Intent(Intent.ACTION_CALL,myUri)
+                startActivity(myIntent)
+            }
+
+            override fun onPermissionDenied(deniedPermissions: MutableList<String>?) {
+             Toast.makeText(mContext,"권한 거부로 안도애ㅕㅁ",Toast.LENGTH_SHORT).show()
+
+            }
+
+        }
+
+        TedPermission.with(mContext)
+            .setPermissionListener(permissionListener)
+            .setDeniedMessage("설정해야지")
+            .setPermissions(.permission.CALL_PHONE)
+            .check()
+    }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
