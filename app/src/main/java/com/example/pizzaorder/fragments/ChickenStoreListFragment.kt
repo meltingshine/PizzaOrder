@@ -6,17 +6,19 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.pizzaorder.R
 
-class ChickenFragment : BaseFragment() {
+class ChickenStoreListFragment : BaseFragment() {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_chicken, container, false)
+        return inflater.inflate(R.layout.fragment_chicken_store_list, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+        setupEvents()
+        setValues()
     }
 
     override fun setupEvents() {
