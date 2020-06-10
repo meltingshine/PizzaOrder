@@ -3,19 +3,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:orientation="vertical"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <!--    오리엔테이션을 꼭 너어야함-->
+
     <com.google.android.material.tabs.TabLayout
-        android:id="@+id/mainTapLayout"
+        android:id="@+id/myTabLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:tabIndicatorColor="#FFFFFF"/>
+        app:tabIndicatorColor="#000000" />
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/storeViewPager"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
-
 
 </LinearLayout>

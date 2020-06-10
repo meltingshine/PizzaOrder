@@ -5,7 +5,7 @@ import com.example.pizzaorder.adapters.StoreFragmentPagerAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : BaseActivity() {
-    lateinit var myAdapter: StoreFragmentPagerAdapter
+    lateinit var storePagerAdapter: StoreFragmentPagerAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -15,11 +15,10 @@ class MainActivity : BaseActivity() {
     }
 
     override fun setValues() {
-        myAdapter = StoreFragmentPagerAdapter(supportFragmentManager)
-        storeViewPager.adapter = myAdapter
-//
-//        탭레이아웃과 뷰페이저를 연결
-        mainTapLayout.setupWithViewPager(storeViewPager)
+        storePagerAdapter = StoreFragmentPagerAdapter(supportFragmentManager)
+        storeViewPager.adapter = storePagerAdapter
+        myTabLayout.setupWithViewPager(storeViewPager)
+
     }
 
     override fun setupEvents() {
