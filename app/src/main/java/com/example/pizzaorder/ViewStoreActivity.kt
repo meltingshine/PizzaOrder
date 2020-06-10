@@ -43,7 +43,7 @@ class ViewStoreActivity : BaseActivity() {
         TedPermission.with(mContext)
             .setPermissionListener(permissionListener)
             .setDeniedMessage("설정해야지")
-            .setPermissions(.permission.CALL_PHONE)
+            .setPermissions(android.Manifest.permission.CALL_PHONE)
             .check()
     }
     }
